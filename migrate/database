@@ -1,0 +1,10 @@
+
+CREATE DATABASE shorturl CHARACTER SET utf8mb4_general_ci;
+
+CREATE TABLE `shorturl`.`links` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `oldUrl` VARCHAR(200) NOT NULL ,
+    `newUrl` VARCHAR(200) NOT NULL ,
+    `date` DATETIME NOT NULL ,
+    PRIMARY KEY (`id`)
+);

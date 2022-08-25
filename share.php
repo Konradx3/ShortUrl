@@ -1,10 +1,17 @@
 <?php
 require_once ('class/Database.php');
 
-$newUrl = $_GET['q'];
-$getUrl = new Database();
-$old = $getUrl->Show($newUrl)[1];
-$new = $getUrl->Show($newUrl)[2];
+if (isset($_GET['q']))
+{
+    $newUrl = $_GET['q'];
+    $getUrl = new Database();
+    $old = $getUrl->Show($newUrl)[1];
+    $new = $getUrl->Show($newUrl)[2];
+}
+else
+{
+    header('Location: index.php');
+}
 
 ?>
 
@@ -21,9 +28,12 @@ $new = $getUrl->Show($newUrl)[2];
 <body class="bg-dark text-white">
 
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Short URL</a>
+    <a class="navbar-brand" href="index.php">Short URL</a>
     <a href="<?php echo $old ?>" type="submit" class="btn btn-primary float-right">Skip ad</a>
 </nav>
+<div class="container">
+    <h3 class="text-center mt-4">Tutaj będą reklamy dla piniendzyyyyyyyy!!!!!</h3>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

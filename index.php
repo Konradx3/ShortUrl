@@ -12,11 +12,20 @@
 <div class="container mt-5">
   <form action="main.php" method="post">
     <label for="input">Url addresss</label>
-    <input type="url" id="input" class="form-control" name="url" aria-describedby="helpBlock">
+    <input type="url" id="input" class="form-control" name="url" aria-describedby="helpBlock" placeholder="You need link with http(s)://">
     <small id="helpBlock" class="form-text text-white">
       Paste your loooooooong adress, we will make new for you :)
     </small>
-    <button type="submit" class="btn btn-primary float-right">Wyślij</button>
+    <button type="submit" class="btn btn-primary float-right">Send</button>
+      <?php
+      if (isset($_GET['q']))
+      {
+          if ($_GET['q'] == 'er')
+          {
+              echo "<p class='text-danger'>Wrong URL address.</p>";
+          }
+      }
+      ?>
   </form>
 </div>
 <!-- Optional JavaScript -->

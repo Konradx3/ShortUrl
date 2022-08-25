@@ -16,7 +16,7 @@ if (!empty($_POST['url']))
     }
     else
     {
-        echo 'Nie prawidłowy adres url';
+        header('Location: index.php?q=er');
     }
 }
 else

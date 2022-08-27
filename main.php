@@ -60,7 +60,7 @@ else
                 </tr>
                 <tr>
                     <td>New URL:</td>
-                    <td><?php echo 'http://localhost/shorturl/share.php?q=' . $newUrl ?></td>
+                    <td><?php echo 'http://testdevkonrad.pl/share.php?q=' . $newUrl ?></td>
                 </tr>
                 </tbody>
             </table>

@@ -2,10 +2,10 @@
 
 class Database
 {
-    private $host = 'localhost';
-    private $dbname = 'shorturl';
-    private $user = 'root';
-    private $password = '';
+    private $host = 'testdehkonrad.mysql.db';
+    private $dbname = 'testdehkonrad';
+    private $user = 'testdehkonrad';
+    private $password = 'ovhAKpass1998';
 
     public function Connect()
     {

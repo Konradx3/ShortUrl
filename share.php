@@ -26,16 +26,33 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Short URL</title>
 </head>
 <body class="bg-dark text-white">
 
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="index.php">Short URL</a>
-    <a href="<?php echo $data ?>" type="submit" class="btn btn-primary float-right">Skip ad</a>
+    <button id="fiveSec" class="btn btn-primary float-right"> 5 sec </button>
+    <a href="<?php echo $data ?>" id="button" type="submit" class="btn btn-primary float-right">Skip ad</a>
+    <script>
+        document.getElementById("button").style.display = "none";
+        document.getElementById("fiveSec").style.display = "inline";
+
+        function showStuff() {
+            document.getElementById("button").style.display = "inline";
+            document.getElementById("fiveSec").style.display = "none";
+        }
+
+        function myFunction() {
+            window.location = "share.php"
+        }
+
+        setTimeout(showStuff, 5000);
+    </script>
 </nav>
 <div class="container">
-    <h3 class="text-center mt-4">Tutaj będą reklamy dla piniendzyyyyyyyy!!!!!</h3>
+    <h3 class="text-center mt-4">Miejsce dla reklam</h3>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

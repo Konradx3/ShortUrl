@@ -3,10 +3,13 @@ require_once ('class/Database.php');
 
 if (isset($_GET['q']))
 {
-    $newUrl = $_GET['q'];
+    $oldUrl = $_GET['q'];
     $getUrl = new Database();
-    $old = $getUrl->Show($newUrl)[1];
-    $new = $getUrl->Show($newUrl)[2];
+    $data = $getUrl->Show($oldUrl)[1];
+    if (!$data)
+    {
+        header('Location: index.php');
+    }
 }
 else
 {
@@ -29,7 +32,7 @@ else
 
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="index.php">Short URL</a>
-    <a href="<?php echo $old ?>" type="submit" class="btn btn-primary float-right">Skip ad</a>
+    <a href="<?php echo $data ?>" type="submit" class="btn btn-primary float-right">Skip ad</a>
 </nav>
 <div class="container">
     <h3 class="text-center mt-4">Tutaj będą reklamy dla piniendzyyyyyyyy!!!!!</h3>

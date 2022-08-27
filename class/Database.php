@@ -28,5 +28,13 @@ class Database
         $stmt->execute([$newUrl]);
         return $stmt->fetch();
     }
+    public function Check($oldUrl)
+    {
+        $query = "SELECT * FROM `links` 
+                  WHERE `oldUrl` = ?";
+        $stmt = $this->Connect()->prepare($query);
+        $stmt->execute([$oldUrl]);
+        return $stmt->fetch();
+    }
 }
 

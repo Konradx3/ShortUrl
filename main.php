@@ -4,14 +4,23 @@ require_once ('class/Database.php');
 
 if (!empty($_POST['url']))
 {
-    if (preg_match('/^(http|https):\\/\\/[a-z0-9_]+([\\-\\.]{1}[a-z_0-9]+)*\\.[_a-z]{2,5}'.'((:[0-9]{1,5})?\\/.*)?$/i', $_POST['url']))
+    if (preg_match('/^(http|https):\\/\\/[a-z0-9_]+([\\-.]{1}[a-z_0-9]+)*\\.[_a-z]{2,5}'.'((:[0-9]{1,5})?\\/.*)?$/i', $_POST['url']))
     {
         try {
             $generate = new GeneratorNewId();
-            $insert = new Database();
+            $db = new Database();
             $oldUrl = $_POST['url'];
-            $newUrl = $generate->uniqidReal(10);
-            $insert->Insert($oldUrl, $newUrl);
+            $data = $db->Check($oldUrl);
+            if (!$data)
+            {
+                $newUrl = $generate->uniqidReal(10);
+                $db->Insert($oldUrl, $newUrl);
+            }
+            else
+            {
+                $newUrl = $db->Check($oldUrl)[2];
+            }
+
         } catch (Exception $e) {echo 'Error';}
     }
     else

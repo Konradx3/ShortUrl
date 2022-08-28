@@ -8,12 +8,12 @@ if (isset($_GET['q']))
     $data = $getUrl->Show($oldUrl)[1];
     if (!$data)
     {
-        header('Location: index.php');
+        header('Location: /index');
     }
 }
 else
 {
-    header('Location: index.php');
+    header('Location: /index');
 }
 
 ?>
@@ -26,13 +26,14 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1343391842580379"
+            crossorigin="anonymous"></script>
     <title>Short URL</title>
 </head>
 <body class="bg-dark text-white">
 
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">Short URL</a>
+    <a class="navbar-brand" href="/index">Short URL</a>
     <button id="fiveSec" class="btn btn-primary float-right"> 5 sec </button>
     <a href="<?php echo $data ?>" id="button" type="submit" class="btn btn-primary float-right">Skip ad</a>
     <script>

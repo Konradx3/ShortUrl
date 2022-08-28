@@ -25,12 +25,12 @@ if (!empty($_POST['url']))
     }
     else
     {
-        header('Location: index.php?q=er');
+        header('Location: /index?q=er');
     }
 }
 else
 {
-    header('Location: index.php');
+    header('Location: /index');
 }
 ?>
 
@@ -60,13 +60,13 @@ else
                 </tr>
                 <tr>
                     <td>New URL:</td>
-                    <td><?php echo 'http://testdevkonrad.pl/share.php?q=' . $newUrl ?></td>
+                    <td><?php echo 'https://testdevkonrad.pl/share?q=' . $newUrl ?></td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div class="card-footer text-muted">
-            <a href="index.php">Thank You</a>
+            <a href="/index">Thank You</a>
         </div>
     </div>
 </div>

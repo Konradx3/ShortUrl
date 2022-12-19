@@ -6,4 +6,4 @@
 </br></br>
 Project will be updated.
 
-Update: Now you can try use it <a href="https://testdevkonrad.pl">Here</a>
+
